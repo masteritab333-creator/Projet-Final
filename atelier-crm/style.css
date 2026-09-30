@@ -1,0 +1,249 @@
+:root {
+  --couleur-fond: #f5f6f8;
+  --couleur-carte: #ffffff;
+  --couleur-texte: #1f2430;
+  --couleur-texte-clair: #6b7280;
+  --couleur-primaire: #2563eb;
+  --couleur-primaire-fonce: #1d4ed8;
+  --couleur-erreur: #dc2626;
+  --couleur-erreur-fond: #fef2f2;
+  --couleur-bordure: #d1d5db;
+  --couleur-champ-fond: #ffffff;
+  --rayon: 10px;
+}
+
+:root[data-theme="sombre"] {
+  --couleur-fond: #14161c;
+  --couleur-carte: #1f232c;
+  --couleur-texte: #e8e9ed;
+  --couleur-texte-clair: #9aa1ae;
+  --couleur-primaire: #3b82f6;
+  --couleur-primaire-fonce: #60a5fa;
+  --couleur-erreur: #f87171;
+  --couleur-erreur-fond: #3a1f22;
+  --couleur-bordure: #3a3f4b;
+  --couleur-champ-fond: #262b35;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--couleur-fond);
+  color: var(--couleur-texte);
+  line-height: 1.4;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.entete {
+  position: relative;
+  padding: 20px 16px 12px;
+  text-align: center;
+}
+
+.bouton-theme {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 50%;
+  background: var(--couleur-carte);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.entete h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.sous-titre {
+  margin: 4px 0 0;
+  color: var(--couleur-texte-clair);
+  font-size: 0.9rem;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+section h2 {
+  font-size: 1.05rem;
+  margin: 0 0 12px;
+}
+
+.section-formulaire {
+  background: var(--couleur-carte);
+  border-radius: var(--rayon);
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.champ-filtre {
+  max-width: 260px;
+  margin-bottom: 16px;
+}
+
+.champ {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.champ label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--couleur-texte-clair);
+}
+
+.champ input,
+.champ select {
+  padding: 10px 12px;
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--couleur-champ-fond);
+  color: var(--couleur-texte);
+}
+
+.champ input:focus,
+.champ select:focus {
+  outline: 2px solid var(--couleur-primaire);
+  outline-offset: 1px;
+}
+
+.message-erreur {
+  background: var(--couleur-erreur-fond);
+  color: var(--couleur-erreur);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  margin: 0 0 12px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--couleur-primaire);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: var(--couleur-primaire-fonce);
+}
+
+.liste-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.liste-vide {
+  color: var(--couleur-texte-clair);
+  text-align: center;
+  padding: 24px 0;
+}
+
+.carte-contact {
+  background: var(--couleur-carte);
+  border-radius: var(--rayon);
+  padding: 14px 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.carte-en-tete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.carte-en-tete h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.carte-entreprise {
+  margin: 2px 0 6px;
+  color: var(--couleur-texte-clair);
+  font-size: 0.9rem;
+}
+
+.carte-date {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.carte-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bouton-supprimer {
+  background: none;
+  border: 1px solid var(--couleur-erreur);
+  color: var(--couleur-erreur);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.bouton-supprimer:hover {
+  background: var(--couleur-erreur-fond);
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-a_contacter {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.badge-en_discussion {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.badge-gagne {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge-perdu {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+@media (min-width: 480px) {
+  .entete h1 {
+    font-size: 1.6rem;
+  }
+}

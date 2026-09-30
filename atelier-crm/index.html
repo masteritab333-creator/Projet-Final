@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suivi des contacts — Mini-CRM</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="entete">
+    <button id="bouton-theme" class="bouton-theme" type="button" aria-label="Basculer le mode sombre">🌙</button>
+    <h1>Suivi des contacts</h1>
+    <p class="sous-titre">Mini-CRM d'équipe — prototype</p>
+  </header>
+
+  <main>
+    <section class="section-formulaire">
+      <h2>Ajouter un contact</h2>
+      <form id="formulaire-contact" novalidate>
+        <div class="champ">
+          <label for="champ-nom">Nom</label>
+          <input type="text" id="champ-nom" name="nom" required />
+        </div>
+
+        <div class="champ">
+          <label for="champ-entreprise">Entreprise</label>
+          <input type="text" id="champ-entreprise" name="entreprise" required />
+        </div>
+
+        <div class="champ">
+          <label for="champ-statut">Statut</label>
+          <select id="champ-statut" name="statut">
+            <option value="a_contacter">À contacter</option>
+            <option value="en_discussion">En discussion</option>
+            <option value="gagne">Gagné</option>
+            <option value="perdu">Perdu</option>
+          </select>
+        </div>
+
+        <div class="champ">
+          <label for="champ-date">Dernière relance</label>
+          <input type="date" id="champ-date" name="derniereRelance" required />
+        </div>
+
+        <p id="zone-erreur" class="message-erreur" role="alert" hidden></p>
+
+        <button type="submit">Ajouter le contact</button>
+      </form>
+    </section>
+
+    <section class="section-liste">
+      <h2>Contacts</h2>
+      <div class="champ champ-filtre">
+        <label for="filtre-statut">Filtrer par statut</label>
+        <select id="filtre-statut">
+          <option value="tous">Tous</option>
+          <option value="a_contacter">À contacter</option>
+          <option value="en_discussion">En discussion</option>
+          <option value="gagne">Gagné</option>
+          <option value="perdu">Perdu</option>
+        </select>
+      </div>
+      <div id="liste-contacts" class="liste-contacts"></div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
